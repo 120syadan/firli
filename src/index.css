@@ -1,0 +1,117 @@
+/* Style umum */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.App, .result {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Halaman awal */
+.App {
+  background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Tombol */
+.buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.yes-btn, .no-btn {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+}
+
+.yes-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.no-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Halaman hasil */
+.result {
+  background: linear-gradient(135deg, #ffe4ec, #ffd6eb);
+  color: #d63384;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.result h2 {
+  font-size: 2rem;
+}
+
+.kiss {
+  width: 180px;
+  max-width: 60vw;
+  margin-bottom: 20px;
+}
+
+/* Animasi hearts */
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  top: -50px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .yes-btn, .no-btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+  .result h2 {
+    font-size: 1.5rem;
+  }
+  .kiss {
+    width: 120px;
+  }
+}
