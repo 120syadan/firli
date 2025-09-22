@@ -1,42 +1,94 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: pink;
+}
+
+.App {
   text-align: center;
+  margin-top: 100px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: deeppink;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+.yes-btn {
+  background-color: lightgreen;
 }
 
-.read-the-docs {
-  color: #888;
+.no-btn {
+  background-color: lightcoral;
+  color: white;
 }
+
+.result {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.kiss {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+/* Animasi berdenyut / pulse */
+.pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Hearts animation */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  top: -20px;
+  animation: fall 4s linear forwards;
+  color: red;
+}
+
+@keyframes fall {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Animasi goyang (shake) */
+.shake {
+  animation: shake 0.8s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-5px, 0) rotate(-3deg); }
+  50% { transform: translate(5px, 0) rotate(3deg); }
+  75% { transform: translate(-5px, 0) rotate(-3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+

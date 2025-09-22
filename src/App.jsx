@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import kiss from "./assets/kiss.gif"; // ⬅️ import gambar
 
 function App() {
   const [yesSize, setYesSize] = useState(1);
   const [accepted, setAccepted] = useState(false);
   const [hearts, setHearts] = useState([]);
 
-  // Generate hearts ketika accepted = true
   useEffect(() => {
     if (accepted) {
       const interval = setInterval(() => {
@@ -14,8 +14,8 @@ function App() {
           ...prev,
           {
             id: Date.now(),
-            left: Math.random() * 100, // posisi random
-            size: Math.random() * 20 + 20, // ukuran 20–40px
+            left: Math.random() * 100,
+            size: Math.random() * 20 + 20,
           },
         ]);
       }, 300);
@@ -26,14 +26,9 @@ function App() {
   if (accepted) {
     return (
       <div className="result">
-        <img
-          src="/kiss.gif"
-          alt="Cute Love"
-          className="kiss"
-        />
+        <img src={kiss} alt="Cute Love" className="kiss shake" />
         <h2>Yay!!! 🥰💖</h2>
 
-        {/* Hearts falling */}
         <div className="hearts-container">
           {hearts.map((heart) => (
             <span
@@ -54,7 +49,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hii Firlii <br /> Selamat Pagii🌷🌷 <br />Apakah kamu suka akuu? ❤</h1>
+      <h1>
+        Hii Firlii <br /> Selamat Malaamm🌷🌷 <br />Apakah kamu suka akuu? ❤
+      </h1>
       <div className="buttons">
         <button
           onClick={() => setAccepted(true)}
